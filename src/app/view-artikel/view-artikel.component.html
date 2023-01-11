@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="content-wrapper">
+        <div class="title">
+            {{artikelData[artikelIndex].title}}
+        </div>
+        <div class="content">
+            {{artikelData[artikelIndex].content}}
+        </div>
+        <div class="author">
+            schriftsteller {{artikelData[artikelIndex].author}}
+        </div>
+
+        <div class="comments">
+            <span class="comment" *ngFor="let comment of this.artikelData[this.artikelIndex].comments"><span
+                    class="uname">{{comment.username}}:</span> <span class="comment">{{comment.comment}}</span> </span>
+        </div>
+
+        <mat-form-field>
+            <mat-label>Benutzer Name</mat-label>
+            <input matInput [(ngModel)]="username">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Kommentar</mat-label>
+            <input matInput [(ngModel)]="comment">
+        </mat-form-field>
+
+        <button (click)="addComment()" mat-raised-button color="primary"> Kommentieren </button>
+
+    </div>
+</div>

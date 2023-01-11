@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="content-wrapper">
+        <button routerLink="/create" class="create-button" mat-button>neuer Text erstellen</button>
+
+        <div [routerLink]="'/view/'+i" class="card" *ngFor="let artikel of artikelData; let i=index">
+            <div class="title">{{artikel.title}}</div>
+            <div class="author">schriftsteller {{artikel.author}}</div>
+            <div class="content">{{artikel.content}}</div>
+        </div>
+    </div>
+</div>
